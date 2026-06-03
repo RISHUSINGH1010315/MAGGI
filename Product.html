@@ -138,6 +138,9 @@
         .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
         .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
         .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
+        /* Wave Animation */
+        .wave-border { animation: wave 3s infinite linear; background-size: 200% 100%; }
+        @keyframes wave { 0% { background-position: 0% 0%; } 100% { background-position: -200% 0%; } }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
@@ -150,6 +153,7 @@
     <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#hero">Our World</a>
     <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#journey-scroll">Cooking Story</a>
     <a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed font-bold transition-colors" href="/Product.html">Products</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Recipes.html">Recipes</a>
   </div>
   <div class="flex items-center gap-4">
     <button aria-label="Search" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
@@ -322,6 +326,7 @@
       <ul class="space-y-3">
         <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Product.html">Our Products</a></li>
         <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/index.html#journey-scroll">Cooking Story</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Recipes.html">Recipes</a></li>
       </ul>
     </div>
     <div class="reveal" style="transition-delay: 200ms;">
