@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maggi | Taste That Brings Everyone Together</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface": "#fef8f4",
+                        "surface-bright": "#fef8f4",
+                        "background": "#fef8f4",
+                        "surface-container-high": "#ede7e3",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1d1b19",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "surface-container": "#f3ede9",
+                        "secondary-container": "#e71520",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "outline": "#7f765f",
+                        "on-tertiary-container": "#7a5500",
+                        "tertiary-fixed": "#ffdeaa",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#32302e",
+                        "secondary-fixed": "#ffdad6",
+                        "tertiary-container": "#ffce7a",
+                        "tertiary": "#7d5700",
+                        "inverse-on-surface": "#f6f0ec",
+                        "surface-container-low": "#f9f2ef",
+                        "primary": "#725c00",
+                        "primary-fixed": "#ffe07f",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e7e1de",
+                        "on-surface-variant": "#4d4632",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#6f5a00",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#410002",
+                        "on-tertiary-fixed": "#271900",
+                        "tertiary-fixed-dim": "#f8bc4c",
+                        "primary-container": "#ffd100",
+                        "surface-variant": "#e7e1de",
+                        "inverse-primary": "#edc200",
+                        "surface-tint": "#725c00",
+                        "outline-variant": "#d1c6ab",
+                        "surface-dim": "#dfd9d5",
+                        "primary-fixed-dim": "#edc200",
+                        "on-background": "#1d1b19",
+                        "on-primary-fixed": "#231b00",
+                        "secondary": "#bb0013",
+                        "on-primary-fixed-variant": "#564500",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter-desktop": "24px",
+                        "gutter-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Montserrat"],
+                        "title-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-surface'); overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Montserrat', sans-serif; }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        /* Glassmorphism & Glow */
+        .glass-panel { 
+            background: rgba(254, 248, 244, 0.6); 
+            backdrop-filter: blur(20px); 
+            border: 0.5px solid rgba(255, 255, 255, 0.2); 
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.4), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .glass-panel:hover::before { opacity: 1; }
+        .glass-panel > * { position: relative; z-index: 2; }
+
+        .umbra-shadow { box-shadow: 0 20px 40px -10px rgba(176, 125, 5, 0.15), 0 10px 20px -5px rgba(176, 125, 5, 0.1); }
+        
+        /* Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .noodle-float { animation: float 6s ease-in-out infinite; }
+            .steam-rise { animation: steam 4s linear infinite; opacity: 0; }
+            .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+            .reveal.active { opacity: 1; transform: translateY(0); }
+            .stagger-card { opacity: 0; transform: scale(0.95); transition: all 0.6s cubic-bezier(0.5, 0, 0, 1); }
+            .stagger-card.active { opacity: 1; transform: scale(1); }
+            .wave-border { animation: wave 3s infinite linear; background-size: 200% 100%; }
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(3deg); } }
+        @keyframes steam { 0% { transform: translateY(0) scale(1); opacity: 0; } 50% { opacity: 0.6; } 100% { transform: translateY(-100px) scale(2); opacity: 0; } }
+        @keyframes wave { 0% { background-position: 0% 0%; } 100% { background-position: -200% 0%; } }
+
+        /* Buttons */
+        .btn-gradient { background: linear-gradient(135deg, #e71520 0%, #bb0013 100%); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; overflow: hidden; }
+        .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
+        .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
+        .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
+
+        /* Mouse Move Effect for 3D visual */
+        .mouse-move-visual { transition: transform 0.1s ease-out; }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-container-max rounded-full bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl shadow-on-tertiary-fixed-variant/10 z-50 flex justify-between items-center px-8 py-3 transition-all duration-300">
+<a class="font-display-lg text-[32px] font-black text-secondary dark:text-secondary-fixed tracking-tight leading-none" href="{{DATA:SCREEN:SCREEN_3}}">
+            Maggi
+        </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary dark:border-secondary-fixed-dim font-bold transition-all" href="{{DATA:SCREEN:SCREEN_3}}">Our World</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="{{DATA:SCREEN:SCREEN_71}}">Products</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="{{DATA:SCREEN:SCREEN_65}}">Recipes</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="{{DATA:SCREEN:SCREEN_109}}">Kitchen Story</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="{{DATA:SCREEN:SCREEN_130}}">Impact</a>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="Search" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button aria-label="Cart" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_basket</span>
+</button>
+<button class="hidden md:inline-flex btn-gradient text-white font-label-sm text-label-sm px-6 py-2.5 rounded-full shadow-lg">
+                Join Club
+            </button>
+<button class="md:hidden text-on-surface-variant hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-container to-tertiary-fixed pt-24 pb-12 px-gutter-mobile md:px-margin-desktop" id="hero">
+<!-- Abstract Background Elements -->
+<div class="absolute inset-0 z-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0iI2FhYSIvPjwvc3ZnPg==')] pointer-events-none"></div>
+<div class="relative z-10 w-full max-w-container-max grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="text-center lg:text-left space-y-8 glass-panel p-8 md:p-12 rounded-[32px] umbra-shadow reveal interactive-card">
+<div class="inline-flex items-center gap-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-full font-label-sm text-on-surface-variant border border-white/40 shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>Ready in 2 Minutes</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">
+                    Taste That Brings <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary-container inline-block hover:scale-105 transition-transform origin-left">Everyone Together</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
+                    Experience the comforting warmth and vibrant flavor that has been loved by generations. Simple, quick, and always deliciously satisfying.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a class="btn-gradient text-white font-title-md text-[16px] px-8 py-4 rounded-full shadow-lg flex items-center justify-center gap-2 group" href="{{DATA:SCREEN:SCREEN_65}}">
+                        Explore Recipes
+                        <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="glass-panel text-on-surface font-title-md text-[16px] px-8 py-4 rounded-full hover:bg-white/40 transition-all flex items-center justify-center gap-2 border border-white/60 hover:scale-105 interactive-card" href="{{DATA:SCREEN:SCREEN_71}}">
+                        Shop Now
+                        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</a>
+</div>
+</div>
+<!-- 3D Product Visual -->
+<div class="relative h-[500px] lg:h-[700px] flex items-center justify-center perspective-1000" id="hero-visual-container">
+<div class="absolute inset-0 bg-primary-fixed blur-[100px] rounded-full opacity-50 z-0"></div>
+<!-- Main Product Image -->
+<img alt="Maggi Noodle Pack" class="relative z-20 w-[90%] max-w-[500px] object-contain drop-shadow-2xl noodle-float mouse-move-visual" id="hero-pack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEE7FfQ53Bt40AT4MoYsAevVeHh7X0DlexKvKwOKv7Mu9q9EdJcHqrP_VxvA5FhU7z8kJd7ea9SZ_jKOBKEfJMvQwzqnMSeF5PunIfVR6ZLKbUElzNXsPWf8oGZMw1PlHK6wj3EK-gXmlCj2qqh_LRSvRReyZhHe3t2OEGH3Wz9kBAkiouRxu6lfTIFCZ10EJGLfzAZ-5oD5Ni-OitvLiyeH7tVyIJVUws1VAMc2y3Do1qyBAtW8kdbeWPbgP6bTK56KJJPNtyRKE" style="animation-duration: 8s;"/>
+<!-- Floating Elements (Simulated) -->
+<div class="absolute z-30 top-[20%] left-[10%] w-12 h-12 bg-secondary rounded-full blur-[2px] opacity-80 noodle-float shadow-lg mouse-move-visual" data-speed="-2" style="animation-delay: 1s; background-image: radial-gradient(circle at 30% 30%, #ff8a80, #d50000);"></div>
+<div class="absolute z-10 bottom-[30%] right-[10%] w-8 h-8 bg-primary-container rounded-full blur-[1px] opacity-90 noodle-float shadow-md mouse-move-visual" data-speed="1" style="animation-delay: 2s; animation-duration: 5s;"></div>
+<div class="absolute z-20 top-[60%] left-[5%] w-10 h-10 bg-green-500 rounded-full blur-[2px] opacity-70 noodle-float shadow-sm mouse-move-visual" data-speed="3" style="animation-delay: 0.5s; animation-duration: 7s;"></div>
+<!-- Steam Particles -->
+<div class="absolute top-[10%] z-10 w-24 h-24 bg-white/40 blur-[20px] rounded-full steam-rise" style="animation-delay: 0s;"></div>
+<div class="absolute top-[20%] left-[40%] z-10 w-32 h-32 bg-white/30 blur-[25px] rounded-full steam-rise" style="animation-delay: 1.5s;"></div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full rounded-t-[40px] pt-20 pb-10 relative z-20 mt-24">
+<div class="absolute top-0 left-0 w-full h-2 wave-border" style="background-image: linear-gradient(90deg, #ffd100 0%, #e71520 50%, #ffd100 100%); border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+<div class="space-y-6 reveal">
+<a class="font-headline-lg text-headline-lg font-black text-secondary hover:scale-105 transition-transform origin-left inline-block cursor-pointer" href="{{DATA:SCREEN:SCREEN_3}}">Maggi</a>
+<p class="font-body-md text-body-md text-on-surface-variant">Taste that brings everyone together. Deliciously crafted for generations.</p>
+<div class="flex gap-4">
+<a aria-label="Facebook" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+</a>
+<a aria-label="Instagram" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</a>
+<a aria-label="Twitter" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+</div>
+</div>
+<div class="reveal" style="transition-delay: 100ms;">
+<h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Explore</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="{{DATA:SCREEN:SCREEN_71}}">Our Products</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="{{DATA:SCREEN:SCREEN_65}}">Recipes</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="{{DATA:SCREEN:SCREEN_109}}">Kitchen Story</a></li>
+</ul>
+</div>
+<div class="reveal" style="transition-delay: 200ms;">
+<h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Legal</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="reveal" style="transition-delay: 300ms;">
+<h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Contact</h3>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/50 text-center reveal" style="transition-delay: 400ms;">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Maggi Global. All rights reserved. Deliciously Crafted.</p>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Reduced Motion Check
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            // Intersection Observer for reveals
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal, .stagger-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mouse Move Effect for Hero Visuals
+            const heroContainer = document.getElementById('hero-visual-container');
+            const visualElements = document.querySelectorAll('.mouse-move-visual');
+            const pack = document.getElementById('hero-pack');
+
+            if (heroContainer && visualElements.length > 0) {
+                heroContainer.addEventListener('mousemove', (e) => {
+                    const rect = heroContainer.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    pack.style.transform = `translate(${x * 20}px, ${y * 20}px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+
+                    visualElements.forEach(el => {
+                        if(el.id !== 'hero-pack') {
+                            const speed = el.getAttribute('data-speed') || 1;
+                            el.style.transform = `translate(${x * 30 * speed}px, ${y * 30 * speed}px)`;
+                        }
+                    });
+                });
+
+                heroContainer.addEventListener('mouseleave', () => {
+                    pack.style.transform = `translate(0px, 0px) rotateY(0deg) rotateX(0deg)`;
+                    visualElements.forEach(el => {
+                        if(el.id !== 'hero-pack') {
+                            el.style.transform = `translate(0px, 0px)`;
+                        }
+                    });
+                });
+            }
+
+            // Glass Panel Hover Glow Effect
+            document.querySelectorAll('.interactive-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        }
+    });
+</script>
+</body></html>
