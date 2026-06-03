@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maggi - Sustainability</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#32302e",
+                        "outline": "#7f765f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#7a5500",
+                        "tertiary-fixed": "#ffdeaa",
+                        "surface-container": "#f3ede9",
+                        "inverse-on-surface": "#f6f0ec",
+                        "on-primary-container": "#6f5a00",
+                        "on-background": "#1d1b19",
+                        "surface-tint": "#725c00",
+                        "tertiary-fixed-dim": "#f8bc4c",
+                        "primary-fixed": "#ffe07f",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "surface-variant": "#e7e1de",
+                        "surface-bright": "#fef8f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#ede7e3",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdad6",
+                        "outline-variant": "#d1c6ab",
+                        "secondary-container": "#e71520",
+                        "on-secondary-container": "#fffbff",
+                        "inverse-primary": "#edc200",
+                        "surface-container-highest": "#e7e1de",
+                        "on-surface-variant": "#4d4632",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fef8f4",
+                        "background": "#fef8f4",
+                        "secondary": "#bb0013",
+                        "primary": "#725c00",
+                        "on-primary-fixed-variant": "#564500",
+                        "on-surface": "#1d1b19",
+                        "primary-fixed-dim": "#edc200",
+                        "on-primary-fixed": "#231b00",
+                        "tertiary": "#7d5700",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#410002",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f9f2ef",
+                        "surface-dim": "#dfd9d5",
+                        "tertiary-container": "#ffce7a",
+                        "primary-container": "#ffd100",
+                        "on-tertiary-fixed-variant": "#5f4100"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "margin-mobile": "20px",
+                        "gutter-mobile": "16px",
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "gutter-desktop": "24px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Montserrat", "sans-serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+                        "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "title-md": ["Montserrat", "sans-serif"],
+                        "headline-lg": ["Montserrat", "sans-serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(254, 248, 244, 0.7); /* surface color with opacity */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(114, 92, 0, 0.08); /* primary color tinted shadow */
+        }
+        
+        .umbra-shadow {
+            box-shadow: 0 10px 30px -5px rgba(176, 125, 5, 0.15), 0 4px 10px -2px rgba(176, 125, 5, 0.1);
+        }
+        
+        .noodle-wave:hover {
+            animation: wave 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateY(0) rotate(0); }
+            100% { transform: translateY(-3px) rotate(2deg); }
+        }
+        /* Buttons */
+        .btn-gradient { background: linear-gradient(135deg, #e71520 0%, #bb0013 100%); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; overflow: hidden; }
+        .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
+        .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
+        .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
+        /* Footer Wave Animation */
+        .wave-border { animation: footerWave 3s infinite linear; background-size: 200% 100%; }
+        @keyframes footerWave { 0% { background-position: 0% 0%; } 100% { background-position: -200% 0%; } }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-container-max rounded-full bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl shadow-on-tertiary-fixed-variant/10 z-50 flex justify-between items-center px-8 py-3 transition-all duration-300">
+  <a class="font-display-lg text-[32px] font-black text-secondary dark:text-secondary-fixed tracking-tight leading-none" href="/index.html#hero">
+    Maggi
+  </a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#hero">Our World</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#journey-scroll">Cooking Story</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Product.html">Products</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Recipes.html">Recipes</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Kitchen.html">Kitchen Story</a>
+    <a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed font-bold transition-colors" href="/impact.html">Impact</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <button aria-label="Search" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+    </button>
+    <button aria-label="Cart" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_basket</span>
+    </button>
+    <button class="hidden md:inline-flex btn-gradient text-white font-label-sm text-label-sm px-6 py-2.5 rounded-full shadow-lg cursor-pointer">
+      Join Club
+    </button>
+    <button class="md:hidden text-on-surface-variant hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center pt-24 overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Hero landscape" class="w-full h-full object-cover object-center" data-alt="A breathtaking, wide-angle landscape photograph of golden wheat fields transitioning into lush, vibrant leaf-green crops under a bright, clear sky. The lighting is natural and sun-drenched, creating a warm, optimistic mood that embodies the concept of 'A Taste for Good'. The image style is high-fidelity and cinematic, serving as a premium background for a modern digital interface with a warm yellow and soft earthy color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiFMA-fSefCv8kjgHdYRaThT_a9oYwJzyCZeCA8koT5M5LAcrxlhawSH1trtt3U2N2Dmyg4bJxSu--x9gD8vpmYKK7NCdaDeild3f89ge2zqh_NuD5xNtl0_MzbDxCK2yVN7_PjZcytInMD-GNtyh7xqXTkmuxRSeGecHDYm0LfWXEGJHXI8Wf_dwyYjk764cUl9E-WP2zcQGlSYxOZLhkjP6GUmFEmNhh_WUkzhp9YBjPRPaDASK3RvsnTB0Lgt2UBFvOnMtUn0g"/>
+<!-- Overlay Gradient to ensure text readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+</div>
+<!-- Content Card -->
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20">
+<div class="glass-panel rounded-[2rem] p-8 md:p-16 max-w-3xl animate-[fadeIn_1s_ease-out]">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+                        Our Commitment
+                    </div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">A Taste for <span class="text-tertiary">Good.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                        We believe that great food starts with respect for the earth. Discover how we are cultivating a more sustainable future, from the soil our ingredients grow in to the communities we support.
+                    </p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-title-md text-title-md umbra-shadow hover:scale-105 hover:bg-surface-tint transition-all duration-300 inline-flex items-center gap-3 group">
+                        Explore Initiatives
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Sustainable Sourcing Bento Grid -->
+<section class="py-24 bg-background relative overflow-hidden">
+<!-- Decorative blobs -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-tertiary-fixed opacity-30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+<div class="absolute bottom-0 left-0 w-72 h-72 bg-primary-fixed opacity-30 rounded-full mix-blend-multiply filter blur-3xl animate-blob" style="animation-delay: 2s"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-4">Sustainable Sourcing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Rooted in nature. We work closely with farmers to regenerate landscapes and ensure the highest quality ingredients.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-mobile md:gap-gutter-desktop auto-rows-[minmax(300px,auto)]">
+<!-- Large Image Feature -->
+<div class="md:col-span-8 rounded-[2rem] overflow-hidden relative group">
+<img alt="Farming" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, highly detailed photograph of a farmer's hands gently holding a handful of rich, dark soil with a small, bright leaf-green seedling sprouting from it. The lighting is soft and natural, emphasizing the textures of the soil and the delicate green leaves. The mood is intimate, trustworthy, and organic. This image anchors a clean, modern UI layout, complementing a warm color scheme of golden yellows and soft earthy neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE0E2y1JQw1enyaxogSNW-pNl3TFC_pYF5HAGfGESJHDyd3lSgbzfdRBZr3_Osgb8o5IuUPzanTTXRHCFXOspfLrGZ-sH7Z8aH5XH4Qy5Jm6CNsE2ah_JXhQpvzgpyDQ8GnmHxYq95vz4xowiQoNHjZ-WlDjStJmv2HjISJJssPIwgcBv1jJ67VJE7QUyP3otRbAj5wnE5fz34oZYfH7kcjZYLkycFf1C-CPSF1MDPbTNh7VB6p5br4FeTmp5JrsfzXgSCqE7idpA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-title-md text-title-md text-on-primary mb-2">Regenerative Agriculture</h3>
+<p class="font-body-md text-body-md text-surface-container-low max-w-md">Restoring soil health and biodiversity through sustainable farming practices across our supply chain.</p>
+</div>
+</div>
+<!-- Stat Card -->
+<div class="md:col-span-4 bg-surface-container rounded-[2rem] p-8 flex flex-col justify-between umbra-shadow hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">compost</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-tertiary mb-2">85%</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-2">Locally Sourced</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Of our key ingredients are sourced directly from local farmers in our operational regions.</p>
+</div>
+</div>
+<!-- Small Info Card -->
+<div class="md:col-span-4 bg-tertiary-fixed-dim rounded-[2rem] p-8 flex flex-col justify-center text-on-tertiary-fixed hover:bg-tertiary-fixed transition-colors duration-300">
+<h4 class="font-title-md text-title-md mb-4">Zero Deforestation</h4>
+<p class="font-body-md text-body-md">Committed to supply chains that protect vital forests and natural habitats by 2025.</p>
+</div>
+<!-- Medium Image Card -->
+<div class="md:col-span-8 rounded-[2rem] overflow-hidden relative group">
+<img alt="Fresh Ingredients" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vibrant, flat-lay photograph of fresh, raw ingredients scattered aesthetically on a clean, light-colored surface. The composition includes bright yellow corn, deep red tomatoes, and fresh, vibrant leaf-green herbs like cilantro and basil. The lighting is bright and even, highlighting the fresh textures and colors. The style is 'Appetizing Precision', looking premium and inviting, perfectly suited for a high-end food brand's digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMMm909L76fbJKoP8b9GM6QzoJRArs3g1VLhLpcGg1nGqfFqlC5yrDLeih3EyYEe4HN3OJmYdfPvegLlfule50qWINt-5Oy8pldmrCUlUYi7QZh2THEJGe8ofz_RAY2UhGB2qWLPwaQNhC4hRSHyq-kXBZRmcLCL8poblWPDO79c6a3-aC-wACH7FHNetlZBSRzeEZkrNA-R_WOjlltEdPUXYkMmwQOrRgP_F6OdAAMD9Bx3P8DgNSM-AgEnrSDCUBg9Rnh9IrqOQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Packaging Initiatives (Animated Stats) -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="inline-flex items-center gap-2 text-secondary font-label-sm text-label-sm uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">recycling</span>
+                    Circular Economy
+                </span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-16 max-w-3xl mx-auto">Designing packaging for a waste-free future.</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Stat 1 -->
+<div class="flex flex-col items-center group">
+<div class="relative w-32 h-32 mb-8">
+<div class="absolute inset-0 bg-primary-fixed rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="absolute inset-2 bg-surface-container-lowest rounded-full flex items-center justify-center border-4 border-primary-container z-10">
+<span class="material-symbols-outlined text-5xl text-primary animate-spin-slow" style="font-variation-settings: 'FILL' 1;">autorenew</span>
+</div>
+</div>
+<h3 class="font-display-lg text-display-lg text-primary mb-2">100%</h3>
+<p class="font-title-md text-title-md text-on-surface mb-2">Recyclable or Reusable</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Our commitment for all packaging by the year 2025.</p>
+</div>
+<!-- Stat 2 -->
+<div class="flex flex-col items-center group">
+<div class="relative w-32 h-32 mb-8">
+<div class="absolute inset-0 bg-secondary-fixed rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="absolute inset-2 bg-surface-container-lowest rounded-full flex items-center justify-center border-4 border-secondary-fixed-dim z-10">
+<span class="material-symbols-outlined text-5xl text-secondary" style="font-variation-settings: 'FILL' 1;">takeout_dining</span>
+</div>
+</div>
+<h3 class="font-display-lg text-display-lg text-secondary mb-2">-33%</h3>
+<p class="font-title-md text-title-md text-on-surface mb-2">Virgin Plastic</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Reduction in our use of virgin plastics since 2018.</p>
+</div>
+<!-- Stat 3 -->
+<div class="flex flex-col items-center group">
+<div class="relative w-32 h-32 mb-8">
+<div class="absolute inset-0 bg-tertiary-fixed rounded-full opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="absolute inset-2 bg-surface-container-lowest rounded-full flex items-center justify-center border-4 border-tertiary z-10">
+<span class="material-symbols-outlined text-5xl text-tertiary" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+</div>
+</div>
+<h3 class="font-display-lg text-display-lg text-tertiary mb-2">50M+</h3>
+<p class="font-title-md text-title-md text-on-surface mb-2">Meals Saved</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Through portion guidance and food waste reduction campaigns.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Impact (Glass Cards) -->
+<section class="py-24 bg-surface-container relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-4">Empowering Communities</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Supporting the people who grow our ingredients and the youth who will shape the future of food.</p>
+</div>
+<button class="text-secondary font-label-sm text-label-sm uppercase tracking-wider hover:text-secondary-container transition-colors inline-flex items-center gap-2">
+                        Read All Stories <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Impact Card 1 -->
+<div class="glass-panel rounded-2xl overflow-hidden flex flex-col md:flex-row group hover:shadow-2xl transition-all duration-300">
+<div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+<img alt="Women in agriculture" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A candid, professional photograph of a diverse group of women working together in a vibrant, sunlit community garden filled with lush green vegetables. They are smiling and engaged in conversation. The lighting is bright and uplifting, highlighting the fresh greenery and conveying a sense of empowerment and community impact. The visual style is modern documentary, designed to fit seamlessly into a polished digital experience with a warm, inviting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcprrK06w13UhazI9mig4fX6hjyisvDV-yOk4oC-TjxNgJFn8-MuvMGjH_Z0pRe1WYz2EmlJoQ5jqEzBcj77Pq2wQJfO2d3708tOWH4t6a-pQh9CTC-Lo4Nko87pQVP8qXmmMWFsYmdPx_Por2TdXkazMD66-hia_UFQMLWjklXLvEKFsYH-B-Ov0hAci7mgNsrPBr8H3TMQsfTvz7EFn2eiJuHdwSJINOpRJQrDtH2qdUpbVFEiRl4VRBPEyRvgl7QUHaSkWz4UI"/>
+</div>
+<div class="w-full md:w-3/5 p-8 flex flex-col justify-center">
+<span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider mb-2">Agriculture</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Women Agripreneurs Program</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Providing training, resources, and market access to female farmers, empowering them to build sustainable businesses.</p>
+<a class="inline-flex items-center gap-2 text-primary hover:text-surface-tint font-bold transition-colors w-max" href="#">
+                                Discover More <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Impact Card 2 -->
+<div class="glass-panel rounded-2xl overflow-hidden flex flex-col md:flex-row group hover:shadow-2xl transition-all duration-300">
+<div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+<img alt="Culinary training" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A brightly lit, modern professional kitchen scene where a young, enthusiastic chef is teaching a group of students how to prepare a meal. The stainless steel counters reflect warm light, and there are vibrant pops of red from tomatoes and yellow from spices. The mood is energetic, educational, and focused. The image has high clarity and a slight depth of field, perfect for a premium food brand's website emphasizing youth empowerment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWckKm8E8tuV4H5tHH6x1qxFlGrX4CA0a75N2Cmm-IZILzF6VM2Tkr_QoLang3vceFX6yzDLCzNxk7MovY5GhCY71Yjp8FRplJGxQTNMfMw-W_xu5kOwxmlDHjXZiEW7ZhfsX1d7xYIgK2sdH8U_tSyMUkPN9_KO3Nx1PvQza0y3vyz8YjQI8GIXRUVPuEqZ7euRTY4f_dboAiWyxiX-E9LQj8nHCUl2Nu9t2A2pVfBmLv9GWSPQlVzNshdxWaLhnbtNjnYMssSg"/>
+</div>
+<div class="w-full md:w-3/5 p-8 flex flex-col justify-center">
+<span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider mb-2">Youth</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Yocuta Initiative</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Young Culinary Talents (YOCUTA) provides practical culinary skills and theoretical training to youth, preparing them for careers in food.</p>
+<a class="inline-flex items-center gap-2 text-primary hover:text-surface-tint font-bold transition-colors w-max" href="#">
+                                Discover More <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full rounded-t-[40px] pt-20 pb-10 relative z-20 mt-24">
+  <div class="absolute top-0 left-0 w-full h-2 wave-border" style="background-image: linear-gradient(90deg, #ffd100 0%, #e71520 50%, #ffd100 100%); border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+  <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+    <div class="space-y-6 reveal">
+      <a class="font-headline-lg text-headline-lg font-black text-secondary hover:scale-105 transition-transform origin-left inline-block cursor-pointer" href="/index.html#hero">Maggi</a>
+      <p class="font-body-md text-body-md text-on-surface-variant">Taste that brings everyone together. Deliciously crafted for generations.</p>
+      <div class="flex gap-4">
+        <a aria-label="Facebook" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+        </a>
+        <a aria-label="Instagram" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+        </a>
+        <a aria-label="Twitter" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+        </a>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay: 100ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Explore</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Product.html">Our Products</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/index.html#journey-scroll">Cooking Story</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Recipes.html">Recipes</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Kitchen.html">Kitchen Story</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/impact.html">Impact</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 200ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Legal</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Privacy Policy</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Terms of Service</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 300ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Contact</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Contact Us</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/50 text-center reveal" style="transition-delay: 400ms;">
+    <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Maggi Global. All rights reserved. Deliciously Crafted.</p>
+  </div>
+</footer>
+</body></html>
