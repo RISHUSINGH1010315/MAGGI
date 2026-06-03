@@ -1,0 +1,35 @@
+(function() {
+  let lastScrollY = window.scrollY;
+  const navbar = document.querySelector('nav');
+
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      
+      // Don't trigger if scroll position is very close to the top
+      if (currentScrollY < 50) {
+        navbar.style.transform = 'translate(-50%, 0)';
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+        lastScrollY = currentScrollY;
+        return;
+      }
+      
+      // Calculate scroll difference
+      const diff = currentScrollY - lastScrollY;
+      
+      // Hide if scrolling down; show if scrolling up
+      if (diff > 5) {
+        navbar.style.transform = 'translate(-50%, -150%)';
+        navbar.style.opacity = '0';
+        navbar.style.pointerEvents = 'none';
+      } else if (diff < -5) {
+        navbar.style.transform = 'translate(-50%, 0)';
+        navbar.style.opacity = '1';
+        navbar.style.pointerEvents = 'auto';
+      }
+      
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
+})();

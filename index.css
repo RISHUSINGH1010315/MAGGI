@@ -167,6 +167,7 @@ header {
   color: var(--accent-secondary);
 }
 
+/*
 nav a {
   color: var(--text-primary);
   text-decoration: none;
@@ -197,6 +198,7 @@ nav a:hover::after {
 nav a:hover {
   color: var(--accent-color);
 }
+*/
 
 /* --- Sticky Scroll Container --- */
 .scroll-container {
