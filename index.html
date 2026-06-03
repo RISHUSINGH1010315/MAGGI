@@ -24,7 +24,6 @@
     <nav>
       <a href="#" id="nav-story">The Journey</a>
       <a href="#" id="nav-controls">Dashboard</a>
-      <a href="#kitchen" id="nav-kitchen">Interactive Bowl</a>
     </nav>
   </header>
 
@@ -41,9 +40,6 @@
           <span class="tag">Stage 01</span>
           <h2>The Ultimate Comfort</h2>
           <p>Unpack the warmth of nostalgia. Whether it's a late-night study session, rainy afternoon, or a quick break, the classic yellow pack is always there to soothe the soul.</p>
-          <button class="card-btn" onclick="document.getElementById('kitchen').scrollIntoView({behavior: 'smooth'})">
-            Skip to Kitchen &rarr;
-          </button>
         </div>
 
         <!-- Slide 2: Boiling Point -->
@@ -65,9 +61,6 @@
           <span class="tag">Stage 04</span>
           <h2>Ready in 2 Minutes</h2>
           <p>Your bowl of pure happiness is ready. Piping hot, steaming, and packed with spices. Grab a fork, roll up a mouthful, and take a trip down memory lane.</p>
-          <button class="card-btn" onclick="document.getElementById('kitchen').scrollIntoView({behavior: 'smooth'})">
-            Customize Your Bowl &darr;
-          </button>
         </div>
       </div>
 
@@ -146,71 +139,6 @@
       </div>
     </div>
   </div>
-
-  <!-- --- Interactive Kitchen Section --- -->
-  <section class="interactive-section" id="kitchen">
-    <div class="section-wrapper">
-      <div class="section-header">
-        <h2>Stir Up Your <span>Own Bowl</span></h2>
-        <p>Pick your favorite ingredients to craft your dream Maggi bowl and watch it come to life right before your eyes!</p>
-      </div>
-
-      <div class="cooking-station">
-        <!-- Ingredients panel -->
-        <div class="ingredients-panel">
-          <h3>Add Ingredients</h3>
-          <div class="ingredients-grid">
-            <div class="ingredient-card" data-ingredient="veggies" data-emoji="🥦">
-              <span class="ingredient-emoji">🥦</span>
-              <span class="ingredient-name">Fresh Veggies</span>
-            </div>
-            <div class="ingredient-card" data-ingredient="paneer" data-emoji="🧀">
-              <span class="ingredient-emoji">🧀</span>
-              <span class="ingredient-name">Paneer Cubes</span>
-            </div>
-            <div class="ingredient-card" data-ingredient="chili" data-emoji="🌶️">
-              <span class="ingredient-emoji">🌶️</span>
-              <span class="ingredient-name">Spicy Green Chili</span>
-            </div>
-            <div class="ingredient-card" data-ingredient="butter" data-emoji="🧈">
-              <span class="ingredient-emoji">🧈</span>
-              <span class="ingredient-name">Dollop of Butter</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bowl Visualizer -->
-        <div class="bowl-panel">
-          <div class="bowl-visualizer">
-            <!-- Rising steam animation -->
-            <div class="serving-steam" id="serving-steam">
-              <div class="steam-puff"></div>
-              <div class="steam-puff"></div>
-              <div class="steam-puff"></div>
-            </div>
-            
-            <div class="bowl-circle">
-              <!-- Animated floating noodles representation inside bowl -->
-              <div class="bowl-overlay-items" id="bowl-overlay-items">
-                <!-- Emojis will float here -->
-              </div>
-            </div>
-          </div>
-
-          <div class="bowl-card">
-            <div class="bowl-title" id="bowl-title">Classic Maggi Bowl</div>
-            <div class="bowl-desc" id="bowl-desc">Pure, comforting, simple, and cooked to perfection in 2 minutes.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- --- Footer --- -->
-  <footer>
-    <div class="footer-logo">MAGGI<span>.</span></div>
-    <p class="footer-copy">&copy; 2026 Interactive Maggi Scroll Showcase. Built for noodle enthusiasts worldwide.</p>
-  </footer>
 
   <script type="module" src="/main.js"></script>
 </body>
