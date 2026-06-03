@@ -523,12 +523,45 @@ function initAudioWidget() {
   }
 }
 
+function initQuality360Parallax() {
+  const qualitySection = document.getElementById('quality-360-section');
+  const panoramaContainer = document.getElementById('panorama-container');
+  const heroFlare = document.getElementById('hero-flare');
+
+  if (qualitySection && panoramaContainer) {
+    qualitySection.addEventListener('mousemove', (e) => {
+      const rect = qualitySection.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Calculate percentage (-1 to 1)
+      const xPercent = (x / rect.width - 0.5) * 2;
+      const yPercent = (y / rect.height - 0.5) * 2;
+      
+      // Move panorama container opposite to mouse for 3D effect
+      panoramaContainer.style.transform = `translate(${xPercent * -30}px, ${yPercent * -15}px)`;
+      
+      if (heroFlare) {
+        heroFlare.style.backgroundPosition = `${50 + xPercent * 20}% ${50 + yPercent * 20}%`;
+      }
+    });
+
+    qualitySection.addEventListener('mouseleave', () => {
+      panoramaContainer.style.transform = `translate(0px, 0px)`;
+      if (heroFlare) {
+        heroFlare.style.backgroundPosition = `50% 50%`;
+      }
+    });
+  }
+}
+
 // --- Initialize ---
 window.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initHeroParallax();
   initScrollReveals();
   initAudioWidget();
+  initQuality360Parallax();
 });
 
 window.addEventListener('resize', resizeCanvas);

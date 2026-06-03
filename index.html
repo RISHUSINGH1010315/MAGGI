@@ -154,6 +154,24 @@
 
     /* Mouse Move Effect for 3D visual */
     .mouse-move-visual { transition: transform 0.1s ease-out; }
+
+    /* 360 Quality Pavilion Styles */
+    .hotspot-pulse {
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+    @keyframes pulse-ring {
+        0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 209, 0, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 209, 0, 0); }
+        100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(255, 209, 0, 0); }
+    }
+    .slow-pan {
+        animation: pan 60s linear infinite;
+    }
+    @keyframes pan {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-primary-container selection:text-on-primary-container bg-background text-on-surface">
@@ -289,6 +307,90 @@
       </div>
     </div>
   </div>
+
+  <!-- --- 360° Quality Pavilion Section --- -->
+  <section class="relative w-full h-[921px] overflow-hidden flex items-center justify-center cursor-crosshair z-20" id="quality-360-section">
+    <!-- Panoramic Container -->
+    <div class="absolute inset-0 z-0 w-[110%] h-[110%] -left-[5%] -top-[5%] transition-transform duration-300 ease-out" id="panorama-container">
+      <!-- Panoramic Background Image -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center slow-pan" data-alt="A hyper-modern, pristine food science laboratory resembling a high-tech kitchen..." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlvv8l1EnRMXBp3EvtdN2eZUsAibZX3zdbHTg1o4zXA1LmwqITKueKM_nv13z49b22Ap0veBJBLr8k_yeFQlvEZUwqqF52J4f9rJiRdfgUenmz8N5n1ufAT4JtSmcYDYXWTN0GvKrrSYSBTkstHDYUZ1CWZzjVz_SlKmpeOaaU1e-pmxPw9Oa3OTtoyLFvcckgw2Cowg7zKmXzTZ9MCRMRXaQ4FJhM0MAn0TFsovuF8sItdqWWSs0phd8Zj3tKotR6x9uEr4QchTc'); background-size: cover;">
+      </div>
+      <!-- Lens Flare / Glimmer Overlay -->
+      <div class="absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(255,209,0,0.15)_0%,transparent_50%)] mix-blend-screen pointer-events-none transition-all duration-300 ease-out" id="hero-flare"></div>
+      <!-- Interactive Hotspots -->
+      <div class="absolute top-[35%] left-[25%] z-30 group">
+        <div class="w-6 h-6 bg-primary-container rounded-full hotspot-pulse cursor-pointer border-2 border-white shadow-lg flex items-center justify-center pointer-events-auto">
+          <div class="w-2 h-2 bg-on-primary-container rounded-full"></div>
+        </div>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 glass-panel p-4 rounded-xl umbra-shadow w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-left">
+          <h4 class="font-title-md text-title-md text-on-surface mb-1 text-base font-semibold">Optical Sorting</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm">Every single grain of wheat and spice is scanned by high-speed cameras to isolate and discard imperfections instantly.</p>
+        </div>
+      </div>
+      <div class="absolute top-[55%] right-[30%] z-30 group">
+        <div class="w-6 h-6 bg-primary-container rounded-full hotspot-pulse cursor-pointer border-2 border-white shadow-lg flex items-center justify-center pointer-events-auto" style="animation-delay: 0.5s;">
+          <div class="w-2 h-2 bg-on-primary-container rounded-full"></div>
+        </div>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 glass-panel p-4 rounded-xl umbra-shadow w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-left">
+          <h4 class="font-title-md text-title-md text-on-surface mb-1 text-base font-semibold">Aroma Profiling</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm">Advanced gas chromatography measures spice volatile compounds to ensure the exact signature Maggi flavor is locked in.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Overlay Gradient for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/40 to-background z-10 pointer-events-none"></div>
+    <div class="relative z-20 text-center max-w-4xl px-gutter-mobile md:px-0 pointer-events-none">
+      <span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-4 py-1.5 rounded-full inline-block mb-6 uppercase tracking-widest shadow-md">Appetizing Precision</span>
+      <h2 class="font-display-lg text-display-lg text-on-surface mb-6 drop-shadow-md">360° Quality Pavilion</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto glass-panel p-6 rounded-2xl umbra-shadow pointer-events-auto">Step inside our state-of-the-art laboratory. Explore the meticulous science and unwavering dedication that guarantees every bowl of Maggi meets our golden standard.</p>
+    </div>
+  </section>
+
+  <!-- --- The Gold Standard Details --- -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 relative z-20">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Gold Standard</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Discover the microscopic precision behind our ingredients. We don't just taste test; we analyze at the molecular level.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+      <!-- Card 1 -->
+      <div class="glass-panel rounded-2xl p-8 umbra-shadow hover:-translate-y-2 transition-transform duration-300 group reveal">
+        <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-3xl">science</span>
+        </div>
+        <h3 class="font-title-md text-title-md text-on-surface mb-3">Grain Purity Analysis</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">Every batch of wheat undergoes spectrographic analysis to guarantee 100% purity and optimal gluten structure for the perfect noodle bite.</p>
+        <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+          <div class="bg-primary-container w-full h-full"></div>
+        </div>
+        <span class="font-label-sm text-label-sm text-primary mt-2 block text-right">100% Verified</span>
+      </div>
+      <!-- Card 2 -->
+      <div class="glass-panel rounded-2xl p-8 umbra-shadow hover:-translate-y-2 transition-transform duration-300 group reveal" style="transition-delay: 100ms;">
+        <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-3xl">eco</span>
+        </div>
+        <h3 class="font-title-md text-title-md text-on-surface mb-3">Spice Potency Check</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">We measure the essential oil content of our spices to ensure the vibrant, authentic flavor profile remains consistent globally.</p>
+        <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+          <div class="bg-primary-container w-[98%] h-full"></div>
+        </div>
+        <span class="font-label-sm text-label-sm text-primary mt-2 block text-right">Peak Potency</span>
+      </div>
+      <!-- Card 3 -->
+      <div class="glass-panel rounded-2xl p-8 umbra-shadow hover:-translate-y-2 transition-transform duration-300 group reveal" style="transition-delay: 200ms;">
+        <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-3xl">verified_user</span>
+        </div>
+        <h3 class="font-title-md text-title-md text-on-surface mb-3">Triple Filtration</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">Our oil and liquid ingredients pass through a rigorous triple-filtration system to remove micro-impurities, ensuring absolute clarity.</p>
+        <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+          <div class="bg-primary-container w-full h-full"></div>
+        </div>
+        <span class="font-label-sm text-label-sm text-primary mt-2 block text-right">Zero Impurities</span>
+      </div>
+    </div>
+  </section>
 
   <!-- Floating Audio Toggle Button -->
   <button id="floating-audio-btn" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-surface/85 border border-outline/20 backdrop-blur-md shadow-2xl hover:scale-110 active:scale-95 transition-all text-secondary hover:text-primary cursor-pointer flex items-center justify-center font-bold" aria-label="Toggle Cooking Sounds">
