@@ -219,14 +219,6 @@
         nav .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        /* Buttons */
-        .btn-gradient { background: linear-gradient(135deg, #e71520 0%, #bb0013 100%); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; overflow: hidden; }
-        .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
-        .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
-        .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
-        /* Wave Animation */
-        .wave-border { animation: wave 3s infinite linear; background-size: 200% 100%; }
-        @keyframes wave { 0% { background-position: 0% 0%; } 100% { background-position: -200% 0%; } }
     </style>
 </head>
 <body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
@@ -358,5 +350,67 @@
     <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Maggi Global. All rights reserved. Deliciously Crafted.</p>
   </div>
 </footer>
+<!-- Join the Maggi Club Modal -->
+<div class="fixed inset-0 z-[100] items-center justify-center p-margin-mobile flex" id="join-club-modal">
+<div class="absolute inset-0 bg-inverse-surface/60 backdrop-blur-md" id="modal-overlay"></div>
+<div class="relative w-full max-w-md glass-panel bg-surface-container-low/90 rounded-[40px] p-10 shadow-2xl scale-100 transition-transform duration-300">
+<button class="absolute top-4 right-4 text-on-primary-container hover:scale-110 transition-transform cursor-pointer" id="close-modal">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center">
+<h2 class="font-display-lg text-3xl text-on-primary-container mb-4 font-bold">Join the Maggi Club</h2>
+<p class="font-body-md text-on-primary-container/80 mb-8">
+        Get exclusive recipes, early access to new flavors, and culinary tips from our top chefs.
+      </p>
+<form class="space-y-4 text-left">
+<div>
+<label class="block font-label-sm text-on-primary-container mb-1 ml-1 font-semibold">Full Name</label>
+<input class="w-full px-5 py-3 rounded-xl border-none ring-1 ring-on-primary-container/20 focus:ring-2 focus:ring-secondary text-on-surface bg-surface-container-lowest transition-all" placeholder="Enter your name" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-on-primary-container mb-1 ml-1 font-semibold">Email Address</label>
+<input class="w-full px-5 py-3 rounded-xl border-none ring-1 ring-on-primary-container/20 focus:ring-2 focus:ring-secondary text-on-surface bg-surface-container-lowest transition-all" placeholder="Enter your email" type="email"/>
+</div>
+<button class="w-full mt-6 btn-gradient py-4 rounded-full font-title-md text-white font-bold uppercase tracking-widest cursor-pointer" type="button">
+          Sign Up Now
+        </button>
+</form>
+</div>
+</div>
+</div>
 <script type="module" src="/navbar.js"></script>
-</body></html>
+<script>
+  const modal = document.getElementById('join-club-modal');
+  const joinBtn = document.querySelector('nav a[href="/JoinClub.html"]');
+  const closeBtn = document.getElementById('close-modal');
+  const overlay = document.getElementById('modal-overlay');
+
+  const toggleModal = (show) => {
+    if (show) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    } else {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  };
+
+  joinBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleModal(true);
+  });
+  
+  const handleClose = () => {
+    toggleModal(false);
+    if (document.referrer && document.referrer.includes(window.location.hostname)) {
+      window.location.href = document.referrer;
+    } else {
+      window.location.href = '/index.html';
+    }
+  };
+
+  closeBtn?.addEventListener('click', handleClose);
+  overlay?.addEventListener('click', handleClose);
+</script></body></html>
