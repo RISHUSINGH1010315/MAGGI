@@ -872,9 +872,6 @@ footer {
   header {
     padding: 15px 25px;
   }
-  nav {
-    display: none; /* Hide desktop nav, simplify for mobile demo */
-  }
   .narrative-card {
     position: absolute;
     left: 5%;
