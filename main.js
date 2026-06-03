@@ -277,7 +277,28 @@ function drawFrame(frameIndex) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  const img = images[frameIndex - 1];
+  // Fallback to closest complete frame if target is not loaded
+  let img = images[frameIndex - 1];
+  if (!img || !img.complete) {
+    // Search backwards first
+    for (let i = frameIndex - 2; i >= 0; i--) {
+      if (images[i] && images[i].complete) {
+        img = images[i];
+        break;
+      }
+    }
+  }
+  // Search forwards if still not found
+  if (!img || !img.complete) {
+    for (let i = frameIndex; i < images.length; i++) {
+      if (images[i] && images[i].complete) {
+        img = images[i];
+        break;
+      }
+    }
+  }
+
+  // If no frame is complete yet, return to avoid blank canvas clears
   if (!img || !img.complete) return;
 
   const canvasWidth = canvas.width / (window.devicePixelRatio || 1);
@@ -361,10 +382,13 @@ window.addEventListener('scroll', () => {
   const scrollContainer = document.getElementById('journey-scroll');
   if (!scrollContainer) return;
 
+  const rect = scrollContainer.getBoundingClientRect();
+  const containerTop = window.scrollY + rect.top;
   const totalScrollable = scrollContainer.scrollHeight - window.innerHeight;
-  const currentScroll = window.scrollY;
 
-  let progress = currentScroll / totalScrollable;
+  // Calculate scrolled progress relative to the container's sticky range
+  const relativeScroll = window.scrollY - containerTop;
+  let progress = relativeScroll / totalScrollable;
   progress = Math.max(0, Math.min(1, progress)); // clamp 0-1
 
   smoothFrame.target = 1 + progress * (frameCount - 1);
@@ -387,21 +411,23 @@ function runAutoplayLoop(timestamp) {
 
     const scrollContainer = document.getElementById('journey-scroll');
     if (scrollContainer) {
+      const rect = scrollContainer.getBoundingClientRect();
+      const containerTop = window.scrollY + rect.top;
       const totalScrollable = scrollContainer.scrollHeight - window.innerHeight;
       
       // Step scroll rate based on autoplay speed
       const scrollStep = (speed * (totalScrollable / 1400)) * (delta / 16.66); // scale with delta time (~60fps)
       let newScroll = window.scrollY + scrollStep;
 
-      // Loop back to start if reached bottom
-      if (newScroll >= totalScrollable - 5) {
-        newScroll = 0;
+      // Loop back to start if reached bottom of container
+      if (newScroll >= containerTop + totalScrollable - 5) {
+        newScroll = containerTop;
       }
 
       window.scrollTo(0, newScroll);
 
       // Scroll trigger manually updates targets
-      const progress = newScroll / totalScrollable;
+      const progress = (newScroll - containerTop) / totalScrollable;
       smoothFrame.target = 1 + progress * (frameCount - 1);
       
       synth.updateVolumeByProgress(progress);
