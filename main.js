@@ -208,7 +208,7 @@ const smoothFrame = {
 };
 
 // --- Preload Images ---
-const getFrameUrl = index => `/Images/ezgif-frame-${index.toString().padStart(3, '0')}.png`;
+const getFrameUrl = index => `Images/ezgif-frame-${index.toString().padStart(3, '0')}.png`;
 
 function initPreloader() {
   const loaderBar = document.getElementById('loader-bar');
