@@ -341,6 +341,34 @@ function updateAnimationLoop() {
   requestAnimationFrame(updateAnimationLoop);
 }
 
+// Map scroll progress to narrative cards
+function updateNarrativeOverlays(progress) {
+  const c1 = document.getElementById('card-1');
+  const c2 = document.getElementById('card-2');
+  const c3 = document.getElementById('card-3');
+  const c4 = document.getElementById('card-4');
+  const prompt = document.getElementById('scroll-prompt');
+
+  const toggle = (el, active) => {
+    if (!el) return;
+    el.classList.toggle('opacity-100', active);
+    el.classList.toggle('translate-y-0', active);
+    el.classList.toggle('scale-100', active);
+    el.classList.toggle('opacity-0', !active);
+    el.classList.toggle('translate-y-10', !active);
+    el.classList.toggle('scale-95', !active);
+  };
+
+  toggle(c1, progress >= 0.0 && progress < 0.22);
+  toggle(c2, progress >= 0.25 && progress < 0.48);
+  toggle(c3, progress >= 0.51 && progress < 0.73);
+  toggle(c4, progress >= 0.76 && progress <= 1.0);
+
+  if (prompt) {
+    prompt.style.opacity = progress > 0.04 ? '0' : '1';
+  }
+}
+
 // Scroll Event Handler
 window.addEventListener('scroll', () => {
   if (appMode !== 'scroll') return;
@@ -361,6 +389,7 @@ window.addEventListener('scroll', () => {
 
   // Synthesizer update
   synth.updateVolumeByProgress(progress);
+  updateNarrativeOverlays(progress);
 });
 
 // Autoplay Programmatic Scroll Loop
@@ -396,6 +425,7 @@ function runAutoplayLoop(timestamp) {
       smoothFrame.target = 1 + progress * (frameCount - 1);
       
       synth.updateVolumeByProgress(progress);
+      updateNarrativeOverlays(progress);
     }
   } else {
     lastAutoplayTime = timestamp;
@@ -403,9 +433,102 @@ function runAutoplayLoop(timestamp) {
   requestAnimationFrame(runAutoplayLoop);
 }
 
+// --- Hero & Scroll Animations ---
+function initHeroParallax() {
+  const heroContainer = document.getElementById('hero-visual-container');
+  const visualElements = document.querySelectorAll('.mouse-move-visual');
+  const pack = document.getElementById('hero-pack');
+
+  if (heroContainer && visualElements.length > 0) {
+    heroContainer.addEventListener('mousemove', (e) => {
+      const rect = heroContainer.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      if (pack) {
+        pack.style.transform = `translate(${x * 20}px, ${y * 20}px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+      }
+
+      visualElements.forEach(el => {
+        if (el.id !== 'hero-pack') {
+          const speed = el.getAttribute('data-speed') || 1;
+          el.style.transform = `translate(${x * 30 * speed}px, ${y * 30 * speed}px)`;
+        }
+      });
+    });
+
+    heroContainer.addEventListener('mouseleave', () => {
+      if (pack) {
+        pack.style.transform = `translate(0px, 0px) rotateY(0deg) rotateX(0deg)`;
+      }
+      visualElements.forEach(el => {
+        if (el.id !== 'hero-pack') {
+          el.style.transform = `translate(0px, 0px)`;
+        }
+      });
+    });
+  }
+
+  // Mouse Move glow effect for interactive cards
+  document.querySelectorAll('.interactive-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+function initScrollReveals() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal, .stagger-card').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+function initAudioWidget() {
+  const audioBtn = document.getElementById('floating-audio-btn');
+  const iconSpan = document.getElementById('audio-icon-span');
+
+  if (audioBtn && iconSpan) {
+    audioBtn.addEventListener('click', () => {
+      if (synth.isPlaying) {
+        synth.stop();
+        iconSpan.innerText = 'volume_off';
+        audioBtn.classList.remove('bg-yellow-100');
+        audioBtn.classList.remove('text-primary');
+      } else {
+        synth.start();
+        iconSpan.innerText = 'volume_up';
+        audioBtn.classList.add('bg-yellow-100');
+        audioBtn.classList.add('text-primary');
+      }
+    });
+  }
+}
+
 // --- Initialize ---
 window.addEventListener('DOMContentLoaded', () => {
   initPreloader();
+  initHeroParallax();
+  initScrollReveals();
+  initAudioWidget();
 });
 
 window.addEventListener('resize', resizeCanvas);
