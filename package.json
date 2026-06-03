@@ -1,0 +1,15 @@
+{
+  "name": "maggi-scroll-animation",
+  "version": "1.0.0",
+  "description": "Premium Interactive Scroll Animation for Maggi Preparation Frames",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
