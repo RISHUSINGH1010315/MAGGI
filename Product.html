@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Products - Maggi</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#32302e",
+                        "outline": "#7f765f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#7a5500",
+                        "tertiary-fixed": "#ffdeaa",
+                        "surface-container": "#f3ede9",
+                        "inverse-on-surface": "#f6f0ec",
+                        "on-primary-container": "#6f5a00",
+                        "on-background": "#1d1b19",
+                        "surface-tint": "#725c00",
+                        "tertiary-fixed-dim": "#f8bc4c",
+                        "primary-fixed": "#ffe07f",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "surface-variant": "#e7e1de",
+                        "surface-bright": "#fef8f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#ede7e3",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdad6",
+                        "outline-variant": "#d1c6ab",
+                        "secondary-container": "#e71520",
+                        "on-secondary-container": "#fffbff",
+                        "inverse-primary": "#edc200",
+                        "surface-container-highest": "#e7e1de",
+                        "on-surface-variant": "#4d4632",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fef8f4",
+                        "background": "#fef8f4",
+                        "secondary": "#bb0013",
+                        "primary": "#725c00",
+                        "on-primary-fixed-variant": "#564500",
+                        "on-surface": "#1d1b19",
+                        "primary-fixed-dim": "#edc200",
+                        "on-primary-fixed": "#231b00",
+                        "tertiary": "#7d5700",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#410002",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f9f2ef",
+                        "surface-dim": "#dfd9d5",
+                        "tertiary-container": "#ffce7a",
+                        "primary-container": "#ffd100",
+                        "on-tertiary-fixed-variant": "#5f4100"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter-mobile": "16px",
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "gutter-desktop": "24px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "title-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }]
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        noodleWave: {
+                            '0%, 100%': { transform: 'scaleY(1)' },
+                            '50%': { transform: 'scaleY(1.1) translateY(-2px)' },
+                        }
+                    },
+                    animation: {
+                        float: 'float 6s ease-in-out infinite',
+                        'noodle-wave': 'noodleWave 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Umbra Shadow */
+        .shadow-umbra {
+            box-shadow: 0 20px 40px -15px rgba(176, 125, 5, 0.2), 0 10px 20px -10px rgba(187, 0, 19, 0.1);
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        /* Buttons */
+        .btn-gradient { background: linear-gradient(135deg, #e71520 0%, #bb0013 100%); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; overflow: hidden; }
+        .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
+        .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
+        .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-container-max rounded-full bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl shadow-on-tertiary-fixed-variant/10 z-50 flex justify-between items-center px-8 py-3 transition-all duration-300">
+  <a class="font-display-lg text-[32px] font-black text-secondary dark:text-secondary-fixed tracking-tight leading-none" href="/index.html#hero">
+    Maggi
+  </a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#hero">Our World</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#journey-scroll">Cooking Story</a>
+    <a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed font-bold transition-colors" href="/Product.html">Products</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <button aria-label="Search" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+    </button>
+    <button aria-label="Cart" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_basket</span>
+    </button>
+    <button class="hidden md:inline-flex btn-gradient text-white font-label-sm text-label-sm px-6 py-2.5 rounded-full shadow-lg cursor-pointer">
+      Join Club
+    </button>
+    <button class="md:hidden text-on-surface-variant hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<!-- Decorative Background Glows -->
+<div class="absolute top-20 left-10 w-96 h-96 bg-primary-container/30 rounded-full blur-[100px] -z-10"></div>
+<div class="absolute bottom-0 right-10 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 flex flex-col items-start space-y-6">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-sm text-label-sm px-4 py-1 rounded-full uppercase tracking-widest shadow-sm">Premium Selection</span>
+<h1 class="font-display-lg text-display-lg text-secondary leading-tight md:text-[72px]">
+                        Our Range of <br/>
+<span class="text-primary-fixed-dim drop-shadow-sm">Deliciousness</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Discover the perfect bowl for every craving. From our classic comforting noodles to innovative new flavors designed for the modern palate.
+                    </p>
+<div class="pt-4 flex gap-4">
+<button class="bg-gradient-to-br from-secondary to-[#8B0000] text-on-secondary px-8 py-4 rounded-full font-title-md text-title-md shadow-umbra hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                            Explore All <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[600px] flex items-center justify-center animate-float z-10">
+<img alt="Floating Noodle Bowl" class="w-full h-full object-contain drop-shadow-2xl z-20 relative mix-blend-multiply" data-alt="A hyper-realistic 3D render of a glossy, vibrant yellow ceramic bowl filled with steaming hot noodles, floating dynamically in mid-air. High-energy splash effects of broth and perfectly lit vegetables (peas, carrots) orbit the bowl. The lighting is premium, bright light-mode studio photography with soft specular highlights, set against a warm, gradient yellow-to-white background. The aesthetic is corporate modern and highly appetizing, capturing culinary precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmb1nPil-ujPHSn3xvhStH9VO7lm4tK9EQs-5r2NVSjaOcKCuzbTGwIj8ccEuvSG0He9A18CS3ZmYL66LZ7ViQmiAaGvo0plaSfdQ6CJlhxWsWlpllAng1qfSnFDFDpCLBD9Cq1i7bf_578lAHuqNpYkTodG0EI0MSEjRV0uTnfYq7ZjnZn7NYABX4JFp-PvSEFp3I9QDD2axDVQpt5PSatDykpjLeVQN-tYaQj6F7EtB9Hs1UTE16bqGjmhmPZNnL8N_cOhIgBbo"/>
+<!-- Parallax decorative elements (simulated) -->
+<img alt="Floating Chili" class="absolute top-10 left-10 w-16 h-16 object-contain blur-[2px] animate-float" data-alt="A small, high-fidelity 3D render of a red chili pepper floating dynamically. Bright studio lighting, glossy texture, casting a soft shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD3dpYpSy-Zb54SnZNyhV4XrfXt9XBTp29oT13Tf1y-SZ_5Pbl2nbDcyGzbwGXRnNoVIR4iD0xIDvDK9sK9wLDhygp99MiIcR2tllmanoLTuc1RIZ7rHehKpp_e4_5sTjoi2SyjlFYb1Usg3uZuVlhij72NKQnRV4azyj7IVptXhLT5HERi2C_SgOV4uNaj8kO-AhOyIQ_BIBQ_2eAuqrzR_UeAjxZqG4-QEtx5zsseZJUU42lGFEGf-0s1gsk33HF3JE6jY3oLHI" style="animation-delay: -2s;"/>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 sticky top-24 z-40 bg-background/80 backdrop-blur-md border-b border-surface-dim">
+<div class="flex overflow-x-auto pb-4 gap-3 no-scrollbar scroll-smooth">
+<button class="flex-shrink-0 bg-primary-container text-on-primary-container font-title-md text-title-md px-6 py-2 rounded-full shadow-md transition-all">All</button>
+<button class="flex-shrink-0 bg-surface-variant text-on-surface-variant hover:bg-surface-container-high font-title-md text-title-md px-6 py-2 rounded-full transition-all">Classic Noodles</button>
+<button class="flex-shrink-0 bg-surface-variant text-on-surface-variant hover:bg-surface-container-high font-title-md text-title-md px-6 py-2 rounded-full transition-all">Nutri-licious</button>
+<button class="flex-shrink-0 bg-surface-variant text-on-surface-variant hover:bg-surface-container-high font-title-md text-title-md px-6 py-2 rounded-full transition-all">Cuppa Noodles</button>
+<button class="flex-shrink-0 bg-surface-variant text-on-surface-variant hover:bg-surface-container-high font-title-md text-title-md px-6 py-2 rounded-full transition-all">Special Masala</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Product Card 1 (Using requested placeholder) -->
+<article class="glass-card bg-surface/60 border-[0.5px] border-white/40 rounded-2xl p-6 flex flex-col relative group overflow-hidden transition-all duration-500 hover:shadow-umbra hover:-translate-y-2">
+<!-- Nutrition Info Hover State -->
+<div class="absolute inset-0 bg-surface-container-highest/95 backdrop-blur-sm z-20 flex flex-col justify-center p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+<h4 class="font-title-md text-title-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">info</span> Nutrition Info
+                        </h4>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Calories</span> <span>310 kcal</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Protein</span> <span>7g</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Carbs</span> <span>45g</span></li>
+</ul>
+</div>
+<div class="relative h-64 mb-6 flex items-center justify-center bg-gradient-to-t from-primary-container/20 to-transparent rounded-xl">
+<img alt="Maggi Classic 2-Minute Noodles" class="h-full object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCObnjwM3nPI-nFdvL-VrSv8RLAxJswZbkmXDdhUrIeNAMotVQO6c6DmT11K7Pf3LZNuogel8-3jsP0l086PbYRC7tA5Eho4U_2jGfnVhzHmKV-bD0YZTk3maQeXWymyapxFSMZFohDw218J7WMJVv2mvz2hLmqblBTV18ayi8-CLO7s30LYmiAPMfw-fUtR1uN_Q1g05Ip2tWReHYJQXdd0S5spFhLXxB_mqBO0cfyUoYmaAWaCZr9bKEUNIuscqXOrz-TI4FDrQU"/>
+<span class="absolute top-4 right-4 bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full">Bestseller</span>
+</div>
+<div class="flex-grow flex flex-col justify-between z-10 relative bg-surface p-4 rounded-xl shadow-sm border border-white/50">
+<div>
+<span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wide">Classic Noodles</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1 mb-2">2-Minute Masala</h3>
+</div>
+<div class="flex items-end justify-between mt-4">
+<span class="font-title-md text-title-md text-secondary font-bold">₹14.00</span>
+<button class="bg-primary-container text-on-primary-container hover:bg-primary-fixed hover:text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="glass-card bg-surface/60 border-[0.5px] border-white/40 rounded-2xl p-6 flex flex-col relative group overflow-hidden transition-all duration-500 hover:shadow-umbra hover:-translate-y-2">
+<div class="absolute inset-0 bg-surface-container-highest/95 backdrop-blur-sm z-20 flex flex-col justify-center p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+<h4 class="font-title-md text-title-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">info</span> Nutrition Info
+                        </h4>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Calories</span> <span>290 kcal</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Protein</span> <span>10g</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Fiber</span> <span>5g</span></li>
+</ul>
+</div>
+<div class="relative h-64 mb-6 flex items-center justify-center bg-gradient-to-t from-surface-variant to-transparent rounded-xl">
+<img alt="Nutri-licious Atta Noodles" class="h-[80%] object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500 mix-blend-multiply" data-alt="A premium 3D studio render of a Maggi Nutri-licious Atta Noodles package. The packaging is rich earthy brown and vibrant yellow, standing upright. It sits on a soft, light-reflective surface with a subtle multi-layered shadow. Bright, clean light-mode aesthetics highlighting the organic, healthy positioning of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKZIY8DmHUvWQFedQiX2MnT_VAtAzwDE9ZQfKjHOaaKBDcswLaFZqnK-KDo0-jBTp99SBPhahcAGxUxsJYmUHdhrz4jDsbn-ytzZFkskYA7ggtTgZME1imIQP6tVBe0ILcYRlGBoM3ZaJqdoFXpNByyZhkuyxCigZ9iEGbf_JChOT3pSq8Kcno4jClWkzK6JCOGoKd2jyUjCd8pJ43PPlNPs8qwYuXkRW0kMGGgoQ9DsgLCo2F265dn-RERBzGYTVYWohDxoLRC5k"/>
+</div>
+<div class="flex-grow flex flex-col justify-between z-10 relative bg-surface p-4 rounded-xl shadow-sm border border-white/50">
+<div>
+<span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wide">Nutri-licious</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1 mb-2">Atta Noodles</h3>
+</div>
+<div class="flex items-end justify-between mt-4">
+<span class="font-title-md text-title-md text-secondary font-bold">₹25.00</span>
+<button class="bg-primary-container text-on-primary-container hover:bg-primary-fixed hover:text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="glass-card bg-surface/60 border-[0.5px] border-white/40 rounded-2xl p-6 flex flex-col relative group overflow-hidden transition-all duration-500 hover:shadow-umbra hover:-translate-y-2">
+<div class="absolute inset-0 bg-surface-container-highest/95 backdrop-blur-sm z-20 flex flex-col justify-center p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+<h4 class="font-title-md text-title-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">info</span> Nutrition Info
+                        </h4>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Calories</span> <span>320 kcal</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Protein</span> <span>6g</span></li>
+<li class="flex justify-between border-b border-outline-variant pb-1"><span>Carbs</span> <span>48g</span></li>
+</ul>
+</div>
+<div class="relative h-64 mb-6 flex items-center justify-center bg-gradient-to-t from-secondary-fixed/50 to-transparent rounded-xl">
+<img alt="Cuppa Noodles Chilli Chow" class="h-[80%] object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500 mix-blend-multiply" data-alt="A high-quality 3D render of a Maggi Cuppa Noodles cup, specifically the Chilli Chow flavor. The cup design is striking red and yellow, angled slightly to show the top lid. It rests on a glossy white surface, casting a warm umbra shadow. The lighting is pristine and modern, emphasizing the on-the-go convenience and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDfxI5DKT_rchUVUNbMzKhs2Z515sWG5ic-MnwbXQzzubRbncFnRrF3-zOkNzjn3RsD2XAOrnx-Ml5J5Fe8PZwTivf9C5tW5NbgFkPv3ZvaVj8xxNInQOvdy1G1tRhLUPOQ1UoCJGOdJWQ84a4-Uy5v8qamlaXzpuTGsD_3FxAdZa44eOnxmRoHce1zAwzwbQ0Z-KSUlv8X0fNLz4GxWpdCIysGUh8Ks7oZtgfOYKhHLmCGMrfvjhWC4lyYkH5K4mCzajnpk8GxLI"/>
+<span class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full">New</span>
+</div>
+<div class="flex-grow flex flex-col justify-between z-10 relative bg-surface p-4 rounded-xl shadow-sm border border-white/50">
+<div>
+<span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wide">Cuppa Noodles</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1 mb-2">Chilli Chow</h3>
+</div>
+<div class="flex items-end justify-between mt-4">
+<span class="font-title-md text-title-md text-secondary font-bold">₹50.00</span>
+<button class="bg-primary-container text-on-primary-container hover:bg-primary-fixed hover:text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full rounded-t-[40px] pt-20 pb-10 relative z-20 mt-24">
+  <div class="absolute top-0 left-0 w-full h-2 wave-border" style="background-image: linear-gradient(90deg, #ffd100 0%, #e71520 50%, #ffd100 100%); border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+  <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+    <div class="space-y-6 reveal">
+      <a class="font-headline-lg text-headline-lg font-black text-secondary hover:scale-105 transition-transform origin-left inline-block cursor-pointer" href="/index.html#hero">Maggi</a>
+      <p class="font-body-md text-body-md text-on-surface-variant">Taste that brings everyone together. Deliciously crafted for generations.</p>
+      <div class="flex gap-4">
+        <a aria-label="Facebook" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+        </a>
+        <a aria-label="Instagram" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+        </a>
+        <a aria-label="Twitter" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+        </a>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay: 100ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Explore</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Product.html">Our Products</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/index.html#journey-scroll">Cooking Story</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 200ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Legal</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Privacy Policy</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Terms of Service</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 300ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Contact</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Contact Us</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/50 text-center reveal" style="transition-delay: 400ms;">
+    <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Maggi Global. All rights reserved. Deliciously Crafted.</p>
+  </div>
+</footer>
+</body></html>
