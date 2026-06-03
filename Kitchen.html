@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Maggi Legacy: A Story of Flavor and Innovation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-lowest": "#ffffff",
+                            "inverse-surface": "#32302e",
+                            "outline": "#7f765f",
+                            "on-primary": "#ffffff",
+                            "on-tertiary-container": "#7a5500",
+                            "tertiary-fixed": "#ffdeaa",
+                            "surface-container": "#f3ede9",
+                            "inverse-on-surface": "#f6f0ec",
+                            "on-primary-container": "#6f5a00",
+                            "on-background": "#1d1b19",
+                            "surface-tint": "#725c00",
+                            "tertiary-fixed-dim": "#f8bc4c",
+                            "primary-fixed": "#ffe07f",
+                            "on-tertiary-fixed": "#271900",
+                            "on-secondary-fixed-variant": "#93000d",
+                            "surface-variant": "#e7e1de",
+                            "surface-bright": "#fef8f4",
+                            "on-secondary": "#ffffff",
+                            "surface-container-high": "#ede7e3",
+                            "error": "#ba1a1a",
+                            "secondary-fixed": "#ffdad6",
+                            "outline-variant": "#d1c6ab",
+                            "secondary-container": "#e71520",
+                            "on-secondary-container": "#fffbff",
+                            "inverse-primary": "#edc200",
+                            "surface-container-highest": "#e7e1de",
+                            "on-surface-variant": "#4d4632",
+                            "on-tertiary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "surface": "#fef8f4",
+                            "background": "#fef8f4",
+                            "secondary": "#bb0013",
+                            "primary": "#725c00",
+                            "on-primary-fixed-variant": "#564500",
+                            "on-surface": "#1d1b19",
+                            "primary-fixed-dim": "#edc200",
+                            "on-primary-fixed": "#231b00",
+                            "tertiary": "#7d5700",
+                            "secondary-fixed-dim": "#ffb4ab",
+                            "error-container": "#ffdad6",
+                            "on-secondary-fixed": "#410002",
+                            "on-error": "#ffffff",
+                            "surface-container-low": "#f9f2ef",
+                            "surface-dim": "#dfd9d5",
+                            "tertiary-container": "#ffce7a",
+                            "primary-container": "#ffd100",
+                            "on-tertiary-fixed-variant": "#5f4100"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit": "8px",
+                            "margin-mobile": "20px",
+                            "gutter-mobile": "16px",
+                            "margin-desktop": "80px",
+                            "container-max": "1280px",
+                            "gutter-desktop": "24px"
+                    },
+                    "fontFamily": {
+                            "display-lg": [
+                                    "Montserrat"
+                            ],
+                            "body-md": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "headline-lg-mobile": [
+                                    "Montserrat"
+                            ],
+                            "body-lg": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "label-sm": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "title-md": [
+                                    "Montserrat"
+                            ],
+                            "headline-lg": [
+                                    "Montserrat"
+                            ]
+                    },
+                    "fontSize": {
+                            "display-lg": [
+                                    "56px",
+                                    {
+                                            "lineHeight": "1.1",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "800"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "34px",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "title-md": [
+                                    "20px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "700"
+                                    }
+                            ]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(176, 125, 5, 0.15);
+        }
+
+        .umbra-shadow {
+            box-shadow: 
+                0 4px 6px -1px rgba(176, 125, 5, 0.1),
+                0 10px 15px -3px rgba(176, 125, 5, 0.1),
+                0 20px 25px -5px rgba(176, 125, 5, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, theme('colors.secondary'), theme('colors.primary-container'));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, theme('colors.secondary'), #ff4500);
+            color: theme('colors.on-secondary');
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.3), 0 4px 15px rgba(187, 0, 19, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 25px rgba(176, 125, 5, 0.5);
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* TopNavBar Specific overrides to match exact json styling classes where custom classes aren't provided via tailwind */
+        nav .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Buttons */
+        .btn-gradient { background: linear-gradient(135deg, #e71520 0%, #bb0013 100%); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; overflow: hidden; }
+        .btn-gradient::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: rotate(45deg) translate(-50%, -50%); transition: transform 0.6s; pointer-events: none; }
+        .btn-gradient:hover { box-shadow: 0 10px 20px -5px rgba(187, 0, 19, 0.4); transform: translateY(-2px) scale(1.05); }
+        .btn-gradient:hover::after { transform: rotate(45deg) translate(50%, 50%); }
+        /* Wave Animation */
+        .wave-border { animation: wave 3s infinite linear; background-size: 200% 100%; }
+        @keyframes wave { 0% { background-position: 0% 0%; } 100% { background-position: -200% 0%; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-container-max rounded-full bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl shadow-on-tertiary-fixed-variant/10 z-50 flex justify-between items-center px-8 py-3 transition-all duration-300">
+  <a class="font-display-lg text-[32px] font-black text-secondary dark:text-secondary-fixed tracking-tight leading-none" href="/index.html#hero">
+    Maggi
+  </a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#hero">Our World</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/index.html#journey-scroll">Cooking Story</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Product.html">Products</a>
+    <a class="font-title-md text-title-md text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="/Recipes.html">Recipes</a>
+    <a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed font-bold transition-colors" href="/Kitchen.html">Kitchen Story</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <button aria-label="Search" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+    </button>
+    <button aria-label="Cart" class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-110">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_basket</span>
+    </button>
+    <button class="hidden md:inline-flex btn-gradient text-white font-label-sm text-label-sm px-6 py-2.5 rounded-full shadow-lg cursor-pointer">
+      Join Club
+    </button>
+    <button class="md:hidden text-on-surface-variant hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+<!-- Article Header -->
+<header class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden pt-24" data-alt="A high-quality, professional photography of a vintage-style 19th-century kitchen scene with old cooking pots, wooden tables, and a portrait of Julius Maggi on the wall. Warm, sepia-toned lighting, cinematic composition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIO6oqrhg13qK68s3uYE0GXhoeK87k-aV3M0bL4KTbfL9EiPYL6rH7YdKPJSE9_u2prEDcu-OYFCOlIG-My4TsgvJFngJtb7dyfU3pdoEzjTJMHV7Vaguqud2KtuCoB9prmMWkiwsIl3sUnhXZ3gD7BrhUA-1Z1CH9ti2FKyNMbeM_p05COvmfmoHUqGbx1Qv-EoTz6t2_Xm5cIHo2JbHUAJSWZMdzdlBmK1r7_97D2YVccA1zumdmgt53rbhksKoAb6ARWbcaQZM'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-b from-background/70 via-background/20 to-background"></div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile md:px-0 mt-12">
+<div class="flex items-center justify-center gap-4 mb-6">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-sm text-label-sm px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">Heritage</span>
+<span class="inline-block glass-panel text-inverse-surface/90 font-label-sm text-label-sm px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">5 Min Read</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-inverse-surface mb-6 drop-shadow-lg">How a Visionary <br/><span class="gradient-text">Revolutionized the Kitchen</span></h1>
+<p class="font-body-lg text-body-lg text-inverse-surface/80 max-w-2xl mx-auto mb-10 font-medium">The Maggi Legacy: A Story of Flavor and Innovation</p>
+</div>
+</header>
+<!-- Main Article Content -->
+<main class="max-w-3xl mx-auto px-margin-mobile md:px-0 py-16">
+<article class="text-on-surface-variant font-body-lg text-body-lg">
+<p class="text-xl leading-relaxed mb-12 font-medium text-on-surface">
+            In 1884, the industrial revolution was changing the world, but it was also changing the way families ate. As more women entered the workforce, time for preparing nutritious meals became scarce. Recognizing this growing challenge, a visionary entrepreneur named Julius Maggi embarked on a mission that would forever alter the culinary landscape: to provide nutritious, quick-to-prepare food for working families.
+        </p>
+<h2 class="text-3xl text-secondary mb-6 mt-16 font-headline-lg font-bold">The Discovery</h2>
+<p class="mb-8 leading-relaxed">
+            Driven by a passion for both nutrition and flavor, Julius Maggi began experimenting with protein-rich legumes. His breakthrough came with the creation of the first powdered legume meals, offering a convenient yet deeply nourishing solution. But he didn't stop there. He soon introduced the iconic Maggi liquid seasoning, a concentrated umami flavor bomb that brought instant richness to everyday dishes.
+        </p>
+<figure class="my-12 relative rounded-3xl overflow-hidden shadow-2xl glass-panel p-3">
+<img alt="Raw spices and ingredients" class="w-full h-auto rounded-2xl object-cover hover:scale-[1.02] transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzGtSDpGTB3zrvZthiMjD8nQ5VAd63v4An596ex-SjRfHtLU-BioYX6XZulBFAHPXRBQtcno53cJXNEFGkHTevh8dvTpMHTuSe2nG9dSsO5dy8JtoUedjHF0U4KI8WzAcX3QEa8kRP6hvTwzg8DJRudt0GqV-ZH5HXe_4OUyajAxKcxOR8SRVCaIK-Ju09_NapGbTWy9wJmwK4W78c62FBXckNuUqcnGmjXb7e5N-4EIouDGGbo72BNebpbxe0TiYjRz4IYTJm5lI"/>
+<figcaption class="text-center text-sm mt-4 text-outline font-label-sm italic pb-2">The uncompromising quality of raw ingredients</figcaption>
+</figure>
+<h2 class="text-3xl text-secondary mb-6 mt-16 font-headline-lg font-bold">Global Expansion</h2>
+<p class="mb-12 leading-relaxed">
+            What started in Switzerland soon captured the hearts and palates of the world. As Maggi expanded across continents, it did something remarkable: it adapted. Rather than imposing a single flavor profile, the brand embraced local tastes. From the spicy bouillon cubes of West Africa to the beloved instant noodles of India and Southeast Asia, Maggi integrated itself into the fabric of regional cuisines while maintaining its core identity of quality and convenience.
+        </p>
+<h2 class="text-3xl text-secondary mb-6 mt-16 font-headline-lg font-bold">Modern Culinary Heritage</h2>
+<p class="mb-8 leading-relaxed">
+            Today, that same spirit of innovation and care lives on. The familiar yellow and red packaging remains a beacon of comfort in kitchens worldwide. Whether it's a quick comforting bowl after a long day or the secret ingredient in a cherished family recipe, Maggi continues to inspire joy, creativity, and togetherness in modern cooking.
+        </p>
+<figure class="my-12 relative rounded-3xl overflow-hidden shadow-2xl glass-panel p-3">
+<img alt="Modern cooking with Maggi" class="w-full h-auto rounded-2xl object-cover hover:scale-[1.02] transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDUHcrUfxbsV_w974icjehzF1fcEPScz4UI3E8Qqoa05wb-q7xIGQdj5XlmmRbGtpIvtiFa0qhLUZDtcgAUJ6hLs9pfbTsDtLnTcFReotnFyd4rJgRgkOUsWN8bYZfKZkjwY_QYvGGXlAzLfR1Bd0CQ33FU7gztEPp7UPFwEus3vBq65HtDzx7L2_2F5VLepqKoCHavXqH4tmW4U2uN2tFBzeEOy03m7RigBrJUCmFHahP0BtPcslyJ3ErE0tSEriGHnJzecgYUj4"/>
+<figcaption class="text-center text-sm mt-4 text-outline font-label-sm italic pb-2">Inspiring joy in modern kitchens</figcaption>
+</figure>
+<div class="mt-20 pt-10 border-t-2 border-outline-variant/30 text-center">
+<h3 class="font-title-md text-title-md text-secondary mb-6">Share this story</h3>
+<div class="flex justify-center gap-6">
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-primary hover:text-secondary hover:-translate-y-1 transition-all shadow-md">
+<span class="material-symbols-outlined text-2xl" data-icon="share">share</span>
+</button>
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-primary hover:text-secondary hover:-translate-y-1 transition-all shadow-md">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite">favorite</span>
+</button>
+</div>
+</div>
+</article>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full rounded-t-[40px] pt-20 pb-10 relative z-20 mt-24">
+  <div class="absolute top-0 left-0 w-full h-2 wave-border" style="background-image: linear-gradient(90deg, #ffd100 0%, #e71520 50%, #ffd100 100%); border-top-left-radius: 40px; border-top-right-radius: 40px;"></div>
+  <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+    <div class="space-y-6 reveal">
+      <a class="font-headline-lg text-headline-lg font-black text-secondary hover:scale-105 transition-transform origin-left inline-block cursor-pointer" href="/index.html#hero">Maggi</a>
+      <p class="font-body-md text-body-md text-on-surface-variant">Taste that brings everyone together. Deliciously crafted for generations.</p>
+      <div class="flex gap-4">
+        <a aria-label="Facebook" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+        </a>
+        <a aria-label="Instagram" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+        </a>
+        <a aria-label="Twitter" class="text-on-surface-variant hover:text-secondary hover:scale-125 transition-all" href="#">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+        </a>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay: 100ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Explore</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Product.html">Our Products</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/index.html#journey-scroll">Cooking Story</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Recipes.html">Recipes</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="/Kitchen.html">Kitchen Story</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 200ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Legal</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Privacy Policy</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Terms of Service</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay: 300ms;">
+      <h3 class="font-title-md text-title-md text-on-surface mb-4 font-bold">Contact</h3>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Contact Us</a></li>
+        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-2 transition-all block" href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/50 text-center reveal" style="transition-delay: 400ms;">
+    <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Maggi Global. All rights reserved. Deliciously Crafted.</p>
+  </div>
+</footer>
+</body></html>
